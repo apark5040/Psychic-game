@@ -14,6 +14,7 @@ document.onkeyup = function (event) {
     var userGuess = event.key.toLowerCase();
 
     function reset() {
+        guesses = 10;
         guessList.length = 0;
     }
 
@@ -28,10 +29,9 @@ document.onkeyup = function (event) {
         guesses--;
         guessList.push(userGuess);
         if (guesses == 0) {
-            guesses = 10;
             misses++;
             reset(guessList);
-            alert("Game Over")
+            alert("Game Over");
         }
     }
 
